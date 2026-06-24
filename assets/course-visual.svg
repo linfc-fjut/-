@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">海洋机器人环境感知技术课程视觉图</title>
+  <desc id="desc">一台自主水下机器人在海底地形上方航行，声呐、视觉和导航感知信号向外扩展。</desc>
+  <defs>
+    <linearGradient id="water" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b3142"/>
+      <stop offset="0.42" stop-color="#0b5d6b"/>
+      <stop offset="1" stop-color="#123d4d"/>
+    </linearGradient>
+    <radialGradient id="light" cx="72%" cy="13%" r="62%">
+      <stop offset="0" stop-color="#c7f4e6" stop-opacity=".75"/>
+      <stop offset=".35" stop-color="#6cc8c3" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#0b3142" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="auv" x1="0" x2="1">
+      <stop offset="0" stop-color="#dfe8ea"/>
+      <stop offset=".48" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#9eb3b9"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffb15c"/>
+      <stop offset="1" stop-color="#ff7d3f"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="820" fill="url(#water)"/>
+  <rect width="1440" height="820" fill="url(#light)"/>
+  <g opacity=".23">
+    <path d="M-40 157 C230 90 370 240 615 156 C843 78 1002 169 1210 111 C1330 77 1417 92 1490 130" fill="none" stroke="#9be7dc" stroke-width="2"/>
+    <path d="M-30 249 C204 188 386 310 612 237 C845 162 979 246 1192 196 C1312 168 1410 173 1490 212" fill="none" stroke="#9be7dc" stroke-width="1.5"/>
+    <path d="M-50 342 C230 291 400 388 630 327 C873 263 1016 334 1224 284 C1337 257 1422 273 1490 306" fill="none" stroke="#9be7dc" stroke-width="1.2"/>
+  </g>
+  <g opacity=".2" stroke="#d8fff8">
+    <path d="M978 0 L632 820" stroke-width="1"/>
+    <path d="M1126 0 L860 820" stroke-width="1"/>
+    <path d="M1288 0 L1115 820" stroke-width="1"/>
+  </g>
+  <g transform="translate(286 257)">
+    <path d="M422 170 L238 312 L108 295 L278 173 Z" fill="#68d6d2" opacity=".22"/>
+    <path d="M437 170 L745 301 L869 277 L594 161 Z" fill="#68d6d2" opacity=".18"/>
+    <path d="M433 188 C350 244 286 300 246 357" fill="none" stroke="#78ede1" stroke-width="3" opacity=".55"/>
+    <path d="M456 188 C548 238 640 286 748 331" fill="none" stroke="#78ede1" stroke-width="3" opacity=".43"/>
+    <path d="M332 112 C359 58 430 32 506 46 C589 61 657 106 673 156 C688 202 644 239 542 250 C438 261 344 239 309 197 C285 169 290 142 332 112 Z" fill="#122b35" opacity=".34" filter="url(#soft)"/>
+    <path d="M268 112 C302 70 392 43 512 48 C642 53 752 94 789 153 C815 194 788 227 704 242 C586 263 411 244 305 202 C247 179 232 149 268 112 Z" fill="url(#auv)"/>
+    <path d="M333 76 C426 51 639 62 735 125 C729 109 711 91 685 77 C590 31 405 25 307 65 C286 74 269 86 256 101 C276 90 302 81 333 76 Z" fill="#ffffff" opacity=".62"/>
+    <path d="M766 140 L908 101 L918 146 L787 167 Z" fill="url(#orange)"/>
+    <path d="M766 182 L913 228 L898 272 L759 214 Z" fill="url(#orange)"/>
+    <path d="M251 121 L124 77 L106 122 L240 158 Z" fill="#d7e5e8"/>
+    <path d="M254 178 L117 227 L138 267 L277 207 Z" fill="#b8ccd1"/>
+    <ellipse cx="480" cy="153" rx="69" ry="31" fill="#122936"/>
+    <ellipse cx="480" cy="153" rx="50" ry="22" fill="#3cc9c8"/>
+    <circle cx="480" cy="153" r="10" fill="#e9fffb"/>
+    <rect x="589" y="112" width="72" height="34" rx="17" fill="#213944"/>
+    <circle cx="615" cy="129" r="8" fill="#62e0dc"/>
+    <circle cx="640" cy="129" r="8" fill="#ffad5a"/>
+    <path d="M287 218 C372 265 583 290 712 239" fill="none" stroke="#6f858b" stroke-width="5" opacity=".45"/>
+  </g>
+  <g opacity=".62">
+    <circle cx="1017" cy="344" r="4" fill="#effffb"/>
+    <circle cx="1076" cy="281" r="3" fill="#effffb"/>
+    <circle cx="1112" cy="397" r="5" fill="#effffb"/>
+    <circle cx="332" cy="436" r="4" fill="#effffb"/>
+    <circle cx="396" cy="370" r="3" fill="#effffb"/>
+    <circle cx="1210" cy="518" r="4" fill="#effffb"/>
+  </g>
+  <path d="M0 689 C164 634 330 664 475 702 C635 744 771 735 911 698 C1079 653 1237 642 1440 689 L1440 820 L0 820 Z" fill="#143545"/>
+  <path d="M0 744 C235 674 396 756 610 733 C820 711 943 644 1124 704 C1237 742 1337 749 1440 712 L1440 820 L0 820 Z" fill="#0d2936"/>
+  <g opacity=".36" fill="#8ed9cf">
+    <path d="M232 710 C218 674 220 636 248 606 C242 651 268 678 248 716 Z"/>
+    <path d="M276 731 C270 690 285 656 322 632 C302 675 315 703 290 735 Z"/>
+    <path d="M1175 708 C1160 671 1164 641 1198 609 C1188 651 1211 676 1191 714 Z"/>
+    <path d="M1240 732 C1236 694 1254 662 1293 640 C1270 680 1285 707 1256 737 Z"/>
+  </g>
+</svg>

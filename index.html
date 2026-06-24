@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="海洋机器人环境感知技术课程教学资料库，展示课程大纲、思维导图、知识图谱、知识点和视频素材。">
+    <title>海洋机器人环境感知技术 | 教学资料库</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="课程首页">
+        <span class="brand-mark">OR</span>
+        <span>海洋机器人环境感知技术</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#outline">课程大纲</a>
+        <a href="#map">思维导图</a>
+        <a href="#graph">知识图谱</a>
+        <a href="#resources">视频素材</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题">
+        <i data-lucide="sun"></i>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <img src="assets/course-visual.svg" alt="自主水下机器人进行环境感知的课程视觉图">
+        <div class="hero-content">
+          <p class="eyebrow">Course Repository</p>
+          <h1>海洋机器人环境感知技术</h1>
+          <p class="hero-copy">集中发布课程大纲、学习路径、知识图谱、知识点讲义和视频素材，支撑学生按任务链路理解水下感知系统。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#resources"><i data-lucide="play-circle"></i><span>查看素材</span></a>
+            <a class="secondary-action" href="#outline"><i data-lucide="list-tree"></i><span>课程大纲</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-strip" aria-label="课程资料概览">
+        <div><strong>8</strong><span>教学模块</span></div>
+        <div><strong>32</strong><span>核心知识点</span></div>
+        <div><strong>18</strong><span>视频/实验素材</span></div>
+        <div><strong>6</strong><span>实践任务</span></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="side-panel" aria-label="资料筛选">
+          <label class="search-box">
+            <i data-lucide="search"></i>
+            <input id="searchInput" type="search" placeholder="搜索知识点、视频、模块">
+          </label>
+          <div class="filter-group" aria-label="资料类型筛选">
+            <button class="filter is-active" type="button" data-filter="all">全部</button>
+            <button class="filter" type="button" data-filter="outline">大纲</button>
+            <button class="filter" type="button" data-filter="knowledge">知识点</button>
+            <button class="filter" type="button" data-filter="video">视频</button>
+          </div>
+          <div class="quick-links">
+            <a href="#outline"><i data-lucide="calendar-days"></i>教学周次</a>
+            <a href="#map"><i data-lucide="git-branch"></i>学习路径</a>
+            <a href="#graph"><i data-lucide="network"></i>概念关系</a>
+            <a href="#resources"><i data-lucide="folder-open"></i>素材目录</a>
+          </div>
+        </aside>
+
+        <div class="content-stack">
+          <section class="section-block" id="outline">
+            <div class="section-heading">
+              <p class="eyebrow">Syllabus</p>
+              <h2>课程大纲</h2>
+            </div>
+            <div class="timeline" id="outlineList"></div>
+          </section>
+
+          <section class="section-block" id="map">
+            <div class="section-heading">
+              <p class="eyebrow">Mind Map</p>
+              <h2>思维导图</h2>
+            </div>
+            <div class="mind-map" id="mindMap"></div>
+          </section>
+
+          <section class="section-block" id="graph">
+            <div class="section-heading">
+              <p class="eyebrow">Knowledge Graph</p>
+              <h2>知识图谱</h2>
+            </div>
+            <div class="graph-layout">
+              <canvas id="knowledgeCanvas" width="920" height="520" aria-label="知识图谱画布"></canvas>
+              <div class="graph-detail" id="graphDetail">
+                <span class="tag">核心节点</span>
+                <h3>环境感知系统</h3>
+                <p>选择图谱节点查看概念说明、先修关系和关联素材。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block" id="knowledge">
+            <div class="section-heading">
+              <p class="eyebrow">Knowledge Points</p>
+              <h2>知识点</h2>
+            </div>
+            <div class="card-grid" id="knowledgeCards"></div>
+          </section>
+
+          <section class="section-block" id="resources">
+            <div class="section-heading">
+              <p class="eyebrow">Media Library</p>
+              <h2>视频与多媒体素材</h2>
+            </div>
+            <div class="resource-grid" id="resourceGrid"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>海洋机器人环境感知技术教学资料库</span>
+      <span>可部署至 GitHub Pages / Netlify / 学校服务器</span>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
