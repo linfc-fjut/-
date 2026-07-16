@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>课程资料管理后台</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .admin-shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 32px auto 56px;
+      }
+
+      .admin-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .admin-header h1 {
+        margin: 0;
+        font-size: clamp(30px, 5vw, 50px);
+        line-height: 1.1;
+      }
+
+      .admin-layout {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
+      }
+
+      .admin-tabs {
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .admin-tab,
+      .admin-button {
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .admin-tab.is-active,
+      .admin-button.primary {
+        border-color: var(--teal);
+        background: var(--teal);
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .admin-panel {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .editor-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .editor-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .editor-item {
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--bg);
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px 12px;
+        background: var(--surface);
+        color: var(--text);
+      }
+
+      .field textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+
+      .raw-editor {
+        min-height: 620px;
+        font-family: Consolas, "Courier New", monospace;
+      }
+
+      .status-line {
+        min-height: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .inline-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .upload-hint {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .upload-input {
+        display: none;
+      }
+
+      @media (max-width: 820px) {
+        .admin-layout,
+        .field-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">OR</span>
+        <span>课程资料管理后台</span>
+      </a>
+      <nav class="main-nav" aria-label="管理导航">
+        <a href="index.html">返回网站</a>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <div class="admin-header">
+        <div>
+          <p class="eyebrow">Admin</p>
+          <h1>课程内容管理</h1>
+        </div>
+        <button class="admin-button primary" id="saveButton" type="button">保存全部修改</button>
+      </div>
+
+      <section class="admin-layout">
+        <aside class="admin-tabs" aria-label="内容类型">
+          <button class="admin-tab is-active" data-section="outline" type="button">课程大纲</button>
+          <button class="admin-tab" data-section="objectives" type="button">课程目标</button>
+          <button class="admin-tab" data-section="knowledge" type="button">知识点</button>
+          <button class="admin-tab" data-section="resources" type="button">视频与素材</button>
+          <button class="admin-tab" data-section="experiments" type="button">实验项目</button>
+          <button class="admin-tab" data-section="assessment" type="button">考核方式</button>
+          <button class="admin-tab" data-section="mindMap" type="button">思维导图</button>
+          <button class="admin-tab" data-section="mindMapFiles" type="button">XMind 文件</button>
+          <button class="admin-tab" data-section="graph" type="button">知识图谱节点</button>
+          <button class="admin-tab" data-section="edges" type="button">图谱关系</button>
+          <button class="admin-tab" data-section="teachingMethods" type="button">教学方法</button>
+          <button class="admin-tab" data-section="references" type="button">参考资料</button>
+          <button class="admin-tab" data-section="raw" type="button">JSON 源码</button>
+        </aside>
+
+        <section class="admin-panel">
+          <div class="editor-toolbar">
+            <div>
+              <h2 id="sectionTitle">课程大纲</h2>
+              <p class="status-line" id="statusLine">正在加载数据...</p>
+            </div>
+            <button class="admin-button" id="addButton" type="button">新增一项</button>
+          </div>
+          <div class="editor-list" id="editorList"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

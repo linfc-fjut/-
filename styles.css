@@ -355,7 +355,7 @@ input {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-columns: 112px minmax(0, 1fr);
   gap: 16px;
   padding: 16px;
   border: 1px solid var(--line);
@@ -364,8 +364,171 @@ input {
 }
 
 .week {
+  display: grid;
+  align-content: start;
+  gap: 6px;
   color: var(--teal);
   font-weight: 800;
+}
+
+.week strong {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.intro-text {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.info-grid,
+.objective-grid,
+.split-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.info-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.objective-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.info-item,
+.objective-card,
+.compact-card,
+.reference-item,
+.assessment-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.info-item {
+  min-height: 88px;
+  padding: 14px;
+}
+
+.info-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.info-item strong {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.35;
+}
+
+.objective-card,
+.compact-card,
+.reference-item {
+  padding: 16px;
+}
+
+.objective-card h3,
+.compact-card h3,
+.reference-item h3,
+.assessment-item h3 {
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.objective-card p,
+.compact-card p,
+.reference-item p,
+.assessment-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.outline-meta,
+.point-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.outline-meta {
+  grid-template-columns: repeat(2, max-content);
+}
+
+.outline-meta span {
+  min-height: 26px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.point-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.point-grid div {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.point-grid strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.point-grid p {
+  font-size: 13px;
+}
+
+.subheading {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.experiment-list,
+.assessment-list,
+.reference-list {
+  display: grid;
+  gap: 12px;
+}
+
+.assessment-item {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px;
+}
+
+.assessment-percent {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 800;
+}
+
+.method-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
 }
 
 .timeline-item h3,
@@ -409,6 +572,7 @@ input {
   grid-template-columns: minmax(160px, .8fr) repeat(2, minmax(180px, 1fr));
   gap: 14px;
   align-items: stretch;
+  margin-bottom: 18px;
 }
 
 .mind-node {
@@ -442,6 +606,69 @@ input {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
+}
+
+.mindmap-file-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mindmap-file-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.mindmap-file-card h3 {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.mindmap-file-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.branch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.branch-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.download-link.is-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.download-link svg {
+  width: 18px;
+  height: 18px;
 }
 
 .graph-layout {
@@ -567,7 +794,10 @@ canvas {
 
   .stats-strip,
   .workspace,
-  .graph-layout {
+  .graph-layout,
+  .info-grid,
+  .objective-grid,
+  .split-grid {
     grid-template-columns: 1fr;
   }
 
@@ -576,8 +806,10 @@ canvas {
   }
 
   .mind-map,
+  .mindmap-file-grid,
   .card-grid,
-  .resource-grid {
+  .resource-grid,
+  .point-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -596,8 +828,11 @@ canvas {
 
   .stats-strip,
   .mind-map,
+  .mindmap-file-grid,
   .card-grid,
-  .resource-grid {
+  .resource-grid,
+  .point-grid,
+  .outline-meta {
     grid-template-columns: 1fr;
   }
 

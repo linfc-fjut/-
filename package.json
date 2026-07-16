@@ -1,0 +1,19 @@
+{
+  "name": "ocean-robot-course-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "这是一个静态展示网站加轻量管理后台的课程资料库。",
+  "main": "admin.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "uuid": "^14.0.1"
+  }
+}
