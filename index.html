@@ -14,10 +14,11 @@
         <span>海洋机器人环境感知技术</span>
       </a>
       <nav class="main-nav" aria-label="主导航">
+        <a href="#course-info">基本信息</a>
+        <a href="#objectives">课程目标</a>
         <a href="#outline">课程大纲</a>
-        <a href="#map">思维导图</a>
-        <a href="#graph">知识图谱</a>
-        <a href="#resources">视频素材</a>
+        <a href="#experiments">实验考核</a>
+        <a href="#resources">资料素材</a>
       </nav>
       <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题">
         <i data-lucide="sun"></i>
@@ -39,10 +40,10 @@
       </section>
 
       <section class="stats-strip" aria-label="课程资料概览">
-        <div><strong>8</strong><span>教学模块</span></div>
-        <div><strong>32</strong><span>核心知识点</span></div>
-        <div><strong>18</strong><span>视频/实验素材</span></div>
-        <div><strong>6</strong><span>实践任务</span></div>
+        <div><strong>2</strong><span>课程学分</span></div>
+        <div><strong>32</strong><span>总学时</span></div>
+        <div><strong>24</strong><span>理论学时</span></div>
+        <div><strong>8</strong><span>实验学时</span></div>
       </section>
 
       <section class="workspace">
@@ -58,18 +59,38 @@
             <button class="filter" type="button" data-filter="video">视频</button>
           </div>
           <div class="quick-links">
+            <a href="#course-info"><i data-lucide="info"></i>基本信息</a>
+            <a href="#objectives"><i data-lucide="target"></i>课程目标</a>
             <a href="#outline"><i data-lucide="calendar-days"></i>教学周次</a>
             <a href="#map"><i data-lucide="git-branch"></i>学习路径</a>
             <a href="#graph"><i data-lucide="network"></i>概念关系</a>
+            <a href="#experiments"><i data-lucide="flask-conical"></i>实验项目</a>
             <a href="#resources"><i data-lucide="folder-open"></i>素材目录</a>
           </div>
         </aside>
 
         <div class="content-stack">
+          <section class="section-block" id="course-info">
+            <div class="section-heading">
+              <p class="eyebrow">Course Info</p>
+              <h2>课程基本信息</h2>
+            </div>
+            <p class="intro-text" id="courseIntro"></p>
+            <div class="info-grid" id="courseInfo"></div>
+          </section>
+
+          <section class="section-block" id="objectives">
+            <div class="section-heading">
+              <p class="eyebrow">Objectives</p>
+              <h2>课程目标</h2>
+            </div>
+            <div class="objective-grid" id="objectiveGrid"></div>
+          </section>
+
           <section class="section-block" id="outline">
             <div class="section-heading">
               <p class="eyebrow">Syllabus</p>
-              <h2>课程大纲</h2>
+              <h2>教学内容与学时分配</h2>
             </div>
             <div class="timeline" id="outlineList"></div>
           </section>
@@ -80,6 +101,7 @@
               <h2>思维导图</h2>
             </div>
             <div class="mind-map" id="mindMap"></div>
+            <div class="mindmap-file-grid" id="mindMapFiles"></div>
           </section>
 
           <section class="section-block" id="graph">
@@ -105,10 +127,44 @@
             <div class="card-grid" id="knowledgeCards"></div>
           </section>
 
+          <section class="section-block" id="experiments">
+            <div class="section-heading">
+              <p class="eyebrow">Practice & Assessment</p>
+              <h2>实验项目与考核方式</h2>
+            </div>
+            <div class="split-grid">
+              <div>
+                <h3 class="subheading">实验项目</h3>
+                <div class="experiment-list" id="experimentList"></div>
+              </div>
+              <div>
+                <h3 class="subheading">考核构成</h3>
+                <div class="assessment-list" id="assessmentList"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block" id="teaching">
+            <div class="section-heading">
+              <p class="eyebrow">Teaching</p>
+              <h2>教学方式与参考资料</h2>
+            </div>
+            <div class="split-grid">
+              <div>
+                <h3 class="subheading">教学方式</h3>
+                <ul class="method-list" id="methodList"></ul>
+              </div>
+              <div>
+                <h3 class="subheading">教材与参考书</h3>
+                <div class="reference-list" id="referenceList"></div>
+              </div>
+            </div>
+          </section>
+
           <section class="section-block" id="resources">
             <div class="section-heading">
               <p class="eyebrow">Media Library</p>
-              <h2>视频与多媒体素材</h2>
+              <h2>课程资料与多媒体素材</h2>
             </div>
             <div class="resource-grid" id="resourceGrid"></div>
           </section>
